@@ -1,14 +1,22 @@
 import React from 'react';
 import Style from './Input.module.css';
 
-const Input = ({ label, type, name }) => {
+const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
   return (
     <div className={Style.wrapper}>
       <label htmlFor={name} className={Style.label}>
         {label}
       </label>
-      <input id={name} name={name} type={type} className={Style.input} />
-      <p className={Style.erro}>Error</p>
+      <input
+        className={Style.input}
+        id={name}
+        name={name}
+        type={type}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+      />
+      {error && <p className={Style.erro}>{error}</p>}
     </div>
   );
 };
