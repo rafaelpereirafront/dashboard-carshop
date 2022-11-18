@@ -1,0 +1,35 @@
+.header {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: var(--background);
+}
+
+.nav {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 0.5rem 0;
+}
+
+.login {
+  color: var(--font-black);
+  display: flex;
+  align-items: center;
+}
+
+.login::after {
+  content: '';
+  display: inline-block;
+  background: url('https://api.iconify.design/mingcute:user-1-fill.svg')
+    no-repeat bottom center;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0.5rem;
+}
