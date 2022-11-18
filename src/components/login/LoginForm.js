@@ -22,8 +22,8 @@ const LoginForm = () => {
   }
 
   return (
-    <section>
-      <h2>Login</h2>
+    <section className={Style.loginForm}>
+      <h3 className={Style.title}>Login</h3>
       <form action="" onSubmit={handleSubmit} className={Style.form}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />

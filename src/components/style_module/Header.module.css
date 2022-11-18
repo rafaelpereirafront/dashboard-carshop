@@ -18,6 +18,13 @@
   padding: 0.5rem 0;
 }
 
+.loginSection {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login {
   color: var(--font-black);
   display: flex;
@@ -32,4 +39,16 @@
   width: 1.2rem;
   height: 1.2rem;
   margin-left: 0.5rem;
+}
+
+.loginForm {
+  width: 19rem;
+  background: var(--background);
+  border: 3px solid var(--buttom-background);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.title {
+  margin-bottom: 2rem;
 }

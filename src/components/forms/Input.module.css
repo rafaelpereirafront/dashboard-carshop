@@ -1,5 +1,4 @@
 .wrapper {
-  max-width: 15rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -7,6 +6,7 @@
 
 .input {
   width: 100%;
+  max-width: 16rem;
   font-size: 1rem;
   padding: 0.8rem;
   border-radius: 0.4rem;

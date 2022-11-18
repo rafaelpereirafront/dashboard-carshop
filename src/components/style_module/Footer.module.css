@@ -1,0 +1,8 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  background: var(--buttom-background);
+  z-index: -1;
+}
