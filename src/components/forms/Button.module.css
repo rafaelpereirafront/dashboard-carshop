@@ -1,0 +1,27 @@
+.button {
+  min-width: 8rem;
+  display: block;
+  padding: 0.8rem 1.2rem;
+  color: var(--font-white);
+  background: var(--buttom-background);
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 120%;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--buttom-background);
+  background: var(--buttom-hover);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}

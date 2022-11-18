@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from '../forms/Button';
+import Input from '../forms/Input';
 import Style from '../style_module/Header.module.css';
 
 const LoginForm = () => {
@@ -18,19 +20,11 @@ const LoginForm = () => {
 
   return (
     <section>
-      <h1>Login</h1>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={userName}
-          onChange={({ target }) => setUserName(target.value)}
-        />
-        <input
-          type="text"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        <button>Entrar</button>
+      <h2>Login</h2>
+      <form action="" onSubmit={handleSubmit} className={Style.form}>
+        <Input label="Usuário" type="text" name="username" />
+        <Input label="Senha" type="password" name="password" />
+        <Button>Entrar</Button>
       </form>
     </section>
   );
