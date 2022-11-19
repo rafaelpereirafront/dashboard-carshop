@@ -18,6 +18,14 @@
   display: flex;
 }
 
+.form {
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 1rem;
+}
+
 .wrapper a {
   margin-right: 3rem;
 }
@@ -49,7 +57,7 @@
 .login::after {
   content: '';
   display: inline-block;
-  background: url('https://api.iconify.design/mingcute:user-1-fill.svg')
+  background: url('https://api.iconify.design/mingcute:user-2-line.svg')
     no-repeat bottom center;
   width: 1.2rem;
   height: 1.2rem;

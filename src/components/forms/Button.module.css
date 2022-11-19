@@ -1,5 +1,5 @@
 .button {
-  min-width: 8rem;
+  min-width: 10rem;
   display: block;
   padding: 0.8rem 1.2rem;
   color: var(--font-white);
@@ -12,6 +12,7 @@
   cursor: pointer;
   box-sizing: border-box;
   transition: 0.1s;
+  white-space: nowrap;
 }
 
 .button:hover,

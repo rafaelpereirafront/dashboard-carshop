@@ -1,0 +1,26 @@
+.inputs {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  margin: 0 auto;
+}
+
+.wrapper {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper input {
+  margin-right: 1rem;
+  min-width: 9rem;
+}
+
+.wrapper label {
+  margin-right: 0.5rem;
+}
+
+.wrapper button {
+  align-self: right;
+}

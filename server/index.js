@@ -3,7 +3,7 @@ const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 
-const dataBase = mysql.createPool({
+const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: '',
@@ -12,15 +12,17 @@ const dataBase = mysql.createPool({
 
 app.use(cors());
 app.use(express.json());
+app.post('/register', (req, res) => {
+  const { nome } = req.body;
+  const { sobrenome } = req.body;
+  const { cidade } = req.body;
 
-// app.get('/', (request, res) => {
-//   let SQL_VENDEDOR =
-//     "INSERT INTO vendedor (nome,sobrenome,cidade)VALUES ('daniel','alves','campinas')";
+  let SQL = 'INSERT INTO vendedor(nome,sobrenome,cidade) VALUES (?,?,?) ';
 
-//   dataBase.query(SQL_VENDEDOR, (err, result) => {
-//     console.log(err);
-//   });
-// });
+  db.query(SQL, [nome, sobrenome, cidade], (err, result) => {
+    console.log(err);
+  });
+});
 
 app.listen(3001, () => {
   console.log('servidor ok');

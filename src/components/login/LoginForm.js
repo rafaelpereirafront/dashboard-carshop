@@ -29,10 +29,13 @@ const LoginForm = () => {
   return (
     <section className={Style.loginForm}>
       <h3 className={Style.title}>Login</h3>
+
       <form action="" onSubmit={HandleSubmit} className={Style.form}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        <Button onClick={() => HandleClickButton()}>Entrar</Button>
+        <div className={Style.form}>
+          <Input label="Usuário" type="text" name="username" {...username} />
+          <Input label="Senha" type="password" name="password" {...password} />
+          <Button onClick={() => HandleClickButton()}>Entrar</Button>
+        </div>
       </form>
     </section>
   );
