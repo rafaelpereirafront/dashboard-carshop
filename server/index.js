@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+const cors = require('cors');
 
 const dataBase = mysql.createPool({
   host: 'localhost',
@@ -9,13 +10,17 @@ const dataBase = mysql.createPool({
   database: 'login',
 });
 
-app.get('/', (request, res) => {
-  let SQL = "INSERT INTO login (username,password)VALUES ('admin','admin')";
+app.use(cors());
+app.use(express.json());
 
-  dataBase.query(SQL, (err, result) => {
-    console.log(err);
-  });
-});
+// app.get('/', (request, res) => {
+//   let SQL_VENDEDOR =
+//     "INSERT INTO vendedor (nome,sobrenome,cidade)VALUES ('daniel','alves','campinas')";
+
+//   dataBase.query(SQL_VENDEDOR, (err, result) => {
+//     console.log(err);
+//   });
+// });
 
 app.listen(3001, () => {
   console.log('servidor ok');
