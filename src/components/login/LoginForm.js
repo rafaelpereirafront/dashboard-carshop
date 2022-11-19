@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useForm from '../../hooks/useForm';
 import Button from '../forms/Button';
 import Input from '../forms/Input';
@@ -8,11 +8,15 @@ const LoginForm = () => {
   const username = useForm('usuario');
   const password = useForm();
 
-  const url = '';
-  function handleSubmit(event) {
+  function HandleClickButton() {
+    console.log(username);
+  }
+
+  function HandleSubmit(event) {
     if (username.validate() && password.validate) {
+      //função sem dados e incompleta
       event.preventDefault();
-      fetch(url, {
+      fetch('', {
         method: 'POST',
       }).then((response) => {
         console.log(response);
@@ -24,10 +28,10 @@ const LoginForm = () => {
   return (
     <section className={Style.loginForm}>
       <h3 className={Style.title}>Login</h3>
-      <form action="" onSubmit={handleSubmit} className={Style.form}>
+      <form action="" onSubmit={HandleSubmit} className={Style.form}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
+        <Button onClick={() => HandleClickButton()}>Entrar</Button>
       </form>
     </section>
   );

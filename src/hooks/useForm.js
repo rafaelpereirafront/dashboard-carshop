@@ -11,12 +11,12 @@ const useForm = (type) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
 
-  function validate(value) {
+  function validate(values) {
     if (type === false) return true;
-    if (value.length === 0) {
+    if (values.length === 0) {
       setError('Preencha um valor');
       return false;
-    } else if (validation[type] && !validation[type].regex.test(value)) {
+    } else if (validation[type] && !validation[type].regex.test(values)) {
       setError(validation[type].message);
       return false;
     } else {
