@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import useForm from '../hooks/useForm';
+// import useForm from '../hooks/useForm';
 import Button from './forms/Button';
 import Input from './forms/Input';
 import Style from './style_module/InputHeader.module.css';
+import StyleTable from './dataElement/DataElement.module.css';
+import DataElement from './dataElement/DataElement';
 
 const Vendedor = () => {
   // const nome = useForm('usuario');
@@ -11,6 +13,8 @@ const Vendedor = () => {
   // const cidade = useForm('usario');
 
   const [values, setValues] = useState();
+  const [list, setList] = useState();
+
   const HandleChangeValues = (value) => {
     setValues((prevValue) => ({
       ...prevValue,
@@ -18,9 +22,7 @@ const Vendedor = () => {
     }));
   };
 
-  function HandleSubmit(event) {
-    event.preventDefault();
-  }
+  function HandleSubmit() {}
 
   const HandleClickButton = () => {
     Axios.post('http://localhost:3001/register', {
@@ -31,6 +33,12 @@ const Vendedor = () => {
       console.log(response);
     });
   };
+
+  useEffect(() => {
+    Axios.get('http://localhost:3001/getCards').then((response) => {
+      setList(response.data);
+    });
+  }, []);
 
   return (
     <>
@@ -64,6 +72,36 @@ const Vendedor = () => {
               </Button>
             </div>
           </form>
+        </div>
+        <div className="contain">
+          <table className={StyleTable.table}>
+            <thead>
+              <tr>
+                <th className={StyleTable.table_title}>#</th>
+                <th className={StyleTable.table_title}>Nome</th>
+                <th className={StyleTable.table_title}>Sobrenome</th>
+                <th className={StyleTable.table_title}>Cidade</th>
+              </tr>
+            </thead>
+            {typeof list !== 'undefined' &&
+              list.map((value, key) => {
+                return (
+                  <tbody key={key}>
+                    <tr>
+                      <DataElement
+                        key={key}
+                        listCard={list}
+                        setListCard={setList}
+                        id={value.idvendedor}
+                        nome={value.nome}
+                        sobrenome={value.sobrenome}
+                        cidade={value.cidade}
+                      />
+                    </tr>
+                  </tbody>
+                );
+              })}
+          </table>
         </div>
       </section>
     </>

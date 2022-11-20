@@ -53,6 +53,7 @@ h3 {
 }
 
 .contain {
+  width: 100%;
   max-width: 1216px;
   margin: 0 auto;
   padding: 0 24px;
@@ -75,5 +76,4 @@ img {
   border-radius: 8px;
   background: #fff;
   box-sizing: border-box;
-  z-index: 1;
 }
