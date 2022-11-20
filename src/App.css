@@ -65,9 +65,22 @@ img {
 }
 
 .block {
+  max-width: 28rem;
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0.8rem;
+  min-height: 5rem;
+  border: 3px solid var(--buttom-background);
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.block_line {
+  max-width: 60rem;
+  display: flex;
+  align-items: center;
   margin-top: 2rem;
   padding: 0.8rem;
   min-height: 5rem;

@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Button from './forms/Button';
 import Input from './forms/Input';
 import Style from './style_module/InputHeader.module.css';
+import StyleTable from './dataElement/DataElement.module.css';
 import { DataElementCar } from './dataElement/DataElement';
 
 const Carros = () => {
@@ -37,77 +38,90 @@ const Carros = () => {
   return (
     <>
       <section className={Style.inputs}>
-        <div className="block">
-          <form action="">
-            <div className={Style.grid}>
-              <div>
-                <Input
-                  label="Categoria"
-                  name="categoria"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
+        <div className="contain">
+          <div className="block">
+            <form action="">
+              <div className={Style.grid}>
+                <div>
+                  <Input
+                    label="Categoria"
+                    name="categoria"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
+                <div>
+                  <Input
+                    label="Modelo"
+                    name="modelo"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
+                <div>
+                  <Input
+                    label="Ano"
+                    name="ano"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
+                <div>
+                  <Input
+                    label="Preço R$"
+                    name="preco"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
+                <div>
+                  <Input
+                    label="Novo/Usado"
+                    name="condicao"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
               </div>
-              <div>
-                <Input
-                  label="Modelo"
-                  name="modelo"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-              <div>
-                <Input
-                  label="Ano"
-                  name="ano"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-              <div>
-                <Input
-                  label="Preço R$"
-                  name="preco"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-              <div>
-                <Input
-                  label="Novo/Usado"
-                  name="condicao"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-              <div>
-                <Input
-                  label="Imagem"
-                  name="imagem"
-                  type="file"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-            </div>
-            <Button onClick={() => HandleClickButton()}>Cadastrar Carro</Button>
-          </form>
+              <Button onClick={() => HandleClickButton()}>
+                Cadastrar Carro
+              </Button>
+            </form>
+          </div>
         </div>
         <div className="contain">
-          {typeof list !== 'undefined' &&
-            list.map((value, key) => {
-              return (
-                <DataElementCar
-                  key={key}
-                  listCard={list}
-                  setListCard={setList}
-                  categoria={value.categoria}
-                  modelo={value.modelo}
-                  ano={value.ano}
-                  preco={value.preco}
-                  condicao={value.condicao}
-                />
-              );
-            })}
+          <table className={StyleTable.table}>
+            <thead>
+              <tr>
+                <th className={StyleTable.table_title}>#</th>
+                <th className={StyleTable.table_title}>Categoria</th>
+                <th className={StyleTable.table_title}>Modelo</th>
+                <th className={StyleTable.table_title}>Ano</th>
+                <th className={StyleTable.table_title}>Preço</th>
+                <th className={StyleTable.table_title}>Condição</th>
+              </tr>
+            </thead>
+            {typeof list !== 'undefined' &&
+              list.map((value, key) => {
+                return (
+                  <tbody key={key}>
+                    <tr>
+                      <DataElementCar
+                        key={key}
+                        listCard={list}
+                        setListCard={setList}
+                        id={value.id}
+                        categoria={value.categoria}
+                        modelo={value.modelo}
+                        ano={value.ano}
+                        preco={value.preco}
+                        condicao={value.condicao}
+                      />
+                    </tr>
+                  </tbody>
+                );
+              })}
+          </table>
         </div>
       </section>
     </>

@@ -40,14 +40,13 @@ app.post('/registerCar', (req, res) => {
   const { ano } = req.body;
   const { preco } = req.body;
   const { condicao } = req.body;
-  const { imagem } = req.body;
 
   let SQL_CAR =
-    'INSERT INTO carro(categoria,modelo,ano,preco,condicao,imagem) VALUES (?,?,?,?,?,?)';
+    'INSERT INTO carro(categoria,modelo,ano,preco,condicao) VALUES (?,?,?,?,?)';
 
   db.query(
     SQL_CAR,
-    [categoria, modelo, ano, preco, condicao, imagem],
+    [categoria, modelo, ano, preco, condicao],
     (err, result) => {
       console.log(err);
     },

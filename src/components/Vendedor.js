@@ -36,35 +36,37 @@ const Vendedor = () => {
   return (
     <>
       <section className={Style.inputs}>
-        <div className="block">
-          <form action="">
-            <div className={Style.wrapper}>
+        <div className="contain">
+          <div className="block_line">
+            <form action="">
               <div className={Style.wrapper}>
-                <Input
-                  label="Nome"
-                  name="name"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-                <Input
-                  label="Sobrenome"
-                  name="sobrenome"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-                <Input
-                  label="Cidade"
-                  name="cidade"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
+                <div className={Style.wrapper}>
+                  <Input
+                    label="Nome"
+                    name="name"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                  <Input
+                    label="Sobrenome"
+                    name="sobrenome"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                  <Input
+                    label="Cidade"
+                    name="cidade"
+                    type="text"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
 
-              <Button onClick={() => HandleClickButton()}>
-                Cadastrar Vendedor
-              </Button>
-            </div>
-          </form>
+                <Button onClick={() => HandleClickButton()}>
+                  Cadastrar Vendedor
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
         <div className="contain">
           <table className={StyleTable.table}>
