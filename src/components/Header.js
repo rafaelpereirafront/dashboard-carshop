@@ -16,7 +16,7 @@ const Header = () => {
               <span>Vendas</span>
             </div>
           </Link>
-          <Link to="/cars" aria-label="cars">
+          <Link to="/carros" aria-label="carros">
             <div className={Style.icon}>
               <IconCars />
               <span>Carros</span>

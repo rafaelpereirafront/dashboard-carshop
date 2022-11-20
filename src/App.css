@@ -65,13 +65,12 @@ img {
 }
 
 .block {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
   align-items: center;
   margin: 0 auto;
   margin-top: 2rem;
   padding: 0.8rem;
-  height: 5rem;
+  min-height: 5rem;
   border: 3px solid var(--buttom-background);
   border-radius: 8px;
   background: #fff;

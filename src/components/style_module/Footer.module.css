@@ -1,5 +1,5 @@
 .footer {
-  height: 8rem;
+  min-height: 8rem;
   background: var(--buttom-background);
   z-index: -1;
 }

@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-// import useForm from '../hooks/useForm';
 import Button from './forms/Button';
 import Input from './forms/Input';
 import Style from './style_module/InputHeader.module.css';
 import StyleTable from './dataElement/DataElement.module.css';
-import DataElement from './dataElement/DataElement';
+import { DataElementVendedor } from './dataElement/DataElement';
 
 const Vendedor = () => {
-  // const nome = useForm('usuario');
-  // const sobrenome = useForm('usuario');
-  // const cidade = useForm('usario');
-
   const [values, setValues] = useState();
   const [list, setList] = useState();
 
@@ -21,8 +16,6 @@ const Vendedor = () => {
       [value.target.name]: value.target.value,
     }));
   };
-
-  function HandleSubmit() {}
 
   const HandleClickButton = () => {
     Axios.post('http://localhost:3001/register', {
@@ -44,7 +37,7 @@ const Vendedor = () => {
     <>
       <section className={Style.inputs}>
         <div className="block">
-          <form action="" onSubmit={HandleSubmit}>
+          <form action="">
             <div className={Style.wrapper}>
               <div className={Style.wrapper}>
                 <Input
@@ -68,7 +61,7 @@ const Vendedor = () => {
               </div>
 
               <Button onClick={() => HandleClickButton()}>
-                Cadastrar Vendor
+                Cadastrar Vendedor
               </Button>
             </div>
           </form>
@@ -88,7 +81,7 @@ const Vendedor = () => {
                 return (
                   <tbody key={key}>
                     <tr>
-                      <DataElement
+                      <DataElementVendedor
                         key={key}
                         listCard={list}
                         setListCard={setList}

@@ -3,9 +3,9 @@ import Axios from 'axios';
 import Button from './forms/Button';
 import Input from './forms/Input';
 import Style from './style_module/InputHeader.module.css';
-import { DataElementVenda } from './dataElement/DataElement';
+import { DataElementCar } from './dataElement/DataElement';
 
-const Vendas = () => {
+const Carros = () => {
   const [values, setValues] = useState();
   const [list, setList] = useState();
 
@@ -17,20 +17,19 @@ const Vendas = () => {
   };
 
   const HandleClickButton = () => {
-    Axios.post('http://localhost:3001/registerVenda', {
-      data: values.data,
-      modelocarro: values.modelocarro,
-      nome: values.nome,
-      sobrenome: values.sobrenome,
-      cidade: values.cidade,
+    Axios.post('http://localhost:3001/registerCar', {
+      categoria: values.categoria,
+      modelo: values.modelo,
+      ano: values.ano,
       preco: values.preco,
+      condicao: values.condicao,
     }).then((response) => {
       console.log(response);
     });
   };
 
   useEffect(() => {
-    Axios.get('http://localhost:3001/getCardsVenda').then((response) => {
+    Axios.get('http://localhost:3001/getCardsCar').then((response) => {
       setList(response.data);
     });
   }, []);
@@ -43,75 +42,69 @@ const Vendas = () => {
             <div className={Style.grid}>
               <div>
                 <Input
-                  label="Data"
-                  name="data"
-                  type="date"
+                  label="Categoria"
+                  name="categoria"
+                  type="text"
                   onChange={HandleChangeValues}
                 />
               </div>
               <div>
                 <Input
                   label="Modelo"
-                  name="modelocarro"
+                  name="modelo"
                   type="text"
                   onChange={HandleChangeValues}
                 />
               </div>
               <div>
                 <Input
-                  label="Nome do Vendedor"
-                  name="nome"
+                  label="Ano"
+                  name="ano"
                   type="text"
                   onChange={HandleChangeValues}
                 />
               </div>
               <div>
                 <Input
-                  label="Sobrenome"
-                  name="sobrenome"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-              <div>
-                <Input
-                  label="Cidade"
-                  name="cidade"
-                  type="text"
-                  onChange={HandleChangeValues}
-                />
-              </div>
-              <div>
-                <Input
-                  label="Preço"
+                  label="Preço R$"
                   name="preco"
                   type="text"
                   onChange={HandleChangeValues}
                 />
               </div>
+              <div>
+                <Input
+                  label="Novo/Usado"
+                  name="condicao"
+                  type="text"
+                  onChange={HandleChangeValues}
+                />
+              </div>
+              <div>
+                <Input
+                  label="Imagem"
+                  name="imagem"
+                  type="file"
+                  onChange={HandleChangeValues}
+                />
+              </div>
             </div>
-            <Button onClick={() => HandleClickButton()}>
-              Cadastrar Vendas
-            </Button>
+            <Button onClick={() => HandleClickButton()}>Cadastrar Carro</Button>
           </form>
         </div>
         <div className="contain">
           {typeof list !== 'undefined' &&
             list.map((value, key) => {
-              {
-                console.log(value);
-              }
               return (
-                <DataElementVenda
+                <DataElementCar
                   key={key}
                   listCard={list}
                   setListCard={setList}
-                  data={value.data}
-                  modelocarro={value.modelocarro}
-                  nome={value.nome}
-                  sobrenome={value.sobrenome}
-                  cidade={value.cidade}
+                  categoria={value.categoria}
+                  modelo={value.modelo}
+                  ano={value.ano}
                   preco={value.preco}
+                  condicao={value.condicao}
                 />
               );
             })}
@@ -121,4 +114,4 @@ const Vendas = () => {
   );
 };
 
-export default Vendas;
+export default Carros;
