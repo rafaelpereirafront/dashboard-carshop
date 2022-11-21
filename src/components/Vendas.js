@@ -137,7 +137,7 @@ const Vendas = () => {
                         nome={value.nome}
                         sobrenome={value.sobrenome}
                         cidade={value.cidade}
-                        preco={value.preco}
+                        preco={`R$ ${value.preco}`}
                       />
                     </tr>
                   </tbody>

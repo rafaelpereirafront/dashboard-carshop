@@ -115,7 +115,7 @@ const Carros = () => {
                         categoria={value.categoria}
                         modelo={value.modelo}
                         ano={value.ano}
-                        preco={value.preco}
+                        preco={`R$ ${value.preco}`}
                         condicao={value.condicao}
                       />
                     </tr>
