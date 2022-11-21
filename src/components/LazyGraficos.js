@@ -1,5 +1,5 @@
 import React from 'react';
-const Grafico = React.lazy(() => import('../Graficos'));
+const Grafico = React.lazy(() => import('./Graficos'));
 
 const LazyGraficos = () => {
   return (

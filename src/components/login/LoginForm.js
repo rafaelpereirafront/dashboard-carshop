@@ -9,26 +9,13 @@ const LoginForm = () => {
   const password = useForm();
 
   function HandleClickButton() {
-    console.log(username);
-  }
-
-  function HandleSubmit(event) {
-    if (username.validate() && password.validate) {
-      //função sem dados e incompleta
-      event.preventDefault();
-      fetch('', {
-        method: 'POST',
-      }).then((response) => {
-        console.log(response);
-        return;
-      });
-    }
+    //função sem dados e incompleta
   }
 
   return (
     <section className={Style.loginForm}>
-      <h3 className={Style.title}>Login</h3>
-      <form action="" onSubmit={HandleSubmit} className={Style.form}>
+      <h2 className={Style.title}>Login</h2>
+      <form action="" className={Style.form}>
         <div className={Style.form}>
           <Input label="Usuário" type="text" name="username" {...username} />
           <Input label="Senha" type="password" name="password" {...password} />

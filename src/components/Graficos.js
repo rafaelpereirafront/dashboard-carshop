@@ -21,27 +21,27 @@ const Graficos = () => {
     const resultadoVendedor = loadData.map((value) => {
       return {
         y: `${value.nome} ${value.sobrenome}`,
-        x: value.data,
+        x: value.mes,
       };
     });
 
     const resultadoPreco = loadData.map((value) => {
       return {
         y: Number(value.preco),
-        x: value.data,
+        x: value.mes,
       };
     });
-    const resultadoMediaPreco = loadData.map((value) => {
+    const resultadoMediaPreco = loadData.map((value, key) => {
       return {
-        y: value.preco,
-        x: value.data,
+        y: Number(value.preco),
+        x: value.mes,
       };
     });
 
     const resultadoVendasCidade = loadData.map((value) => {
       return {
         x: value.cidade,
-        y: value.data,
+        y: value.mes,
       };
     });
     setGrafVendedor(resultadoVendedor);

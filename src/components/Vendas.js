@@ -20,6 +20,7 @@ const Vendas = () => {
   const HandleClickButton = () => {
     Axios.post('http://localhost:3001/registerVenda', {
       data: values.data,
+      mes: values.mes,
       modelocarro: values.modelocarro,
       nome: values.nome,
       sobrenome: values.sobrenome,
@@ -48,6 +49,14 @@ const Vendas = () => {
                     label="Data"
                     name="data"
                     type="date"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
+                <div>
+                  <Input
+                    label="Mês"
+                    name="mes"
+                    type="text"
                     onChange={HandleChangeValues}
                   />
                 </div>
@@ -91,10 +100,10 @@ const Vendas = () => {
                     onChange={HandleChangeValues}
                   />
                 </div>
+                <Button onClick={() => HandleClickButton()}>
+                  Cadastrar Vendas
+                </Button>
               </div>
-              <Button onClick={() => HandleClickButton()}>
-                Cadastrar Vendas
-              </Button>
             </form>
           </div>
         </div>
@@ -103,8 +112,8 @@ const Vendas = () => {
           <table className={StyleTable.table}>
             <thead>
               <tr>
-                <th className={StyleTable.table_title}>#</th>
                 <th className={StyleTable.table_title}>Data da Venda</th>
+                <th className={StyleTable.table_title}>Mês</th>
                 <th className={StyleTable.table_title}>Modelo</th>
                 <th className={StyleTable.table_title}>Nome do Vendedor</th>
                 <th className={StyleTable.table_title}>Sobrenome</th>
@@ -122,6 +131,7 @@ const Vendas = () => {
                         listCard={list}
                         setListCard={setList}
                         id={value.id}
+                        mes={value.mes}
                         data={value.data}
                         modelocarro={value.modelocarro}
                         nome={value.nome}

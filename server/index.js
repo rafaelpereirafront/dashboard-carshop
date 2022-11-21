@@ -64,6 +64,7 @@ app.get('/getCardsCar', (req, res) => {
 
 app.post('/registerVenda', (req, res) => {
   const { data } = req.body;
+  const { mes } = req.body;
   const { modelocarro } = req.body;
   const { nome } = req.body;
   const { sobrenome } = req.body;
@@ -71,11 +72,11 @@ app.post('/registerVenda', (req, res) => {
   const { preco } = req.body;
 
   let SQL_VENDAS =
-    'INSERT INTO venda(data,modelocarro,nome,sobrenome,cidade,preco) VALUES (?,?,?,?,?,?)';
+    'INSERT INTO venda(data,mes,modelocarro,nome,sobrenome,cidade,preco) VALUES (?,?,?,?,?,?,?)';
 
   db.query(
     SQL_VENDAS,
-    [data, modelocarro, nome, sobrenome, cidade, preco],
+    [data, mes, modelocarro, nome, sobrenome, cidade, preco],
     (err, result) => {
       console.log(err);
     },

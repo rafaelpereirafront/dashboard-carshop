@@ -7,7 +7,7 @@ import Vendas from './components/Vendas';
 import Login from './components/login/Login';
 import Carros from './components/Carros';
 import Vendedor from './components/Vendedor';
-import LazyGraficos from './components/style_module/LazyGraficos';
+import LazyGraficos from './components/LazyGraficos';
 
 function App() {
   return (

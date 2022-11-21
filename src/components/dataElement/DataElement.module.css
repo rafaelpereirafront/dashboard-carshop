@@ -32,6 +32,10 @@
   text-transform: capitalize;
 }
 
+.table_column_nome {
+  display: none;
+}
+
 .table_line::after {
   content: '';
   margin-top: 0.5rem;
