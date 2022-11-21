@@ -2,11 +2,14 @@ import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import StyleGrafico from './style_module/Graficos.module.css';
 import Style from './style_module/InputHeader.module.css';
-import { VictoryBar, VictoryPie } from 'victory';
+import { VictoryBar, VictoryPie, VictoryChart, VictoryArea } from 'victory';
 
 const Graficos = () => {
   const [loadData, setLoadData] = useState([]);
   const [grafVendedor, setGrafVendedor] = useState(0);
+  const [grafPreco, setGrafPreco] = useState(0);
+  const [grafMedia, setGrafMedia] = useState(0);
+  const [grafCidade, setGrafCidade] = useState(0);
 
   useEffect(() => {
     Axios.get('http://localhost:3001/getCardsVenda').then((response) => {
@@ -15,16 +18,36 @@ const Graficos = () => {
   }, []);
 
   React.useEffect(() => {
-    const resultadoVendedor =
-      typeof loadData !== 'undefined' &&
-      loadData.map((value) => {
-        return {
-          x: `${value.nome} ${value.sobrenome}`,
-          y: value.data,
-          // y: Number(value.preco),
-        };
-      });
+    const resultadoVendedor = loadData.map((value) => {
+      return {
+        y: `${value.nome} ${value.sobrenome}`,
+        x: value.data,
+      };
+    });
+
+    const resultadoPreco = loadData.map((value) => {
+      return {
+        y: Number(value.preco),
+        x: value.data,
+      };
+    });
+    const resultadoMediaPreco = loadData.map((value) => {
+      return {
+        y: value.preco,
+        x: value.data,
+      };
+    });
+
+    const resultadoVendasCidade = loadData.map((value) => {
+      return {
+        x: value.cidade,
+        y: value.data,
+      };
+    });
     setGrafVendedor(resultadoVendedor);
+    setGrafPreco(resultadoPreco);
+    setGrafMedia(resultadoMediaPreco);
+    setGrafCidade(resultadoVendasCidade);
   }, [loadData]);
 
   return (
@@ -36,25 +59,45 @@ const Graficos = () => {
             <div>
               <h3>Resultado Vendedor/Mês</h3>
               <div className={StyleGrafico.graphic_card}>
-                <VictoryPie data={grafVendedor} innerRadius={60} />
+                <VictoryChart
+                  padding={{ top: 40, bottom: 40, left: 130, right: 50 }}
+                >
+                  <VictoryBar
+                    alignment="start"
+                    data={grafVendedor}
+                  ></VictoryBar>
+                </VictoryChart>
               </div>
             </div>
             <div>
               <h3>Total de Vendas/Mês</h3>
               <div className={StyleGrafico.graphic_card}>
-                <VictoryPie data={grafVendedor} />
+                <VictoryChart
+                  padding={{ top: 40, bottom: 40, left: 90, right: 90 }}
+                >
+                  <VictoryBar alignment="start" data={grafPreco}></VictoryBar>
+                </VictoryChart>
               </div>
             </div>
             <div>
               <h3>Média das Vendas/Mês</h3>
               <div className={StyleGrafico.graphic_card}>
-                <VictoryPie data={grafVendedor} />
+                <VictoryChart
+                  padding={{ top: 40, bottom: 40, left: 60, right: 50 }}
+                >
+                  <VictoryArea
+                    data={grafMedia}
+                    style={{
+                      data: { fill: '#ffd199', stroke: '#fb1' },
+                    }}
+                  ></VictoryArea>
+                </VictoryChart>
               </div>
             </div>
             <div>
               <h3>Cidades Mais vendidas</h3>
               <div className={StyleGrafico.graphic_card}>
-                <VictoryPie data={grafVendedor} />
+                <VictoryPie data={grafCidade} innerRadius={60} />
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ import Vendas from './components/Vendas';
 import Login from './components/login/Login';
 import Carros from './components/Carros';
 import Vendedor from './components/Vendedor';
-import Graficos from './components/Graficos';
+import LazyGraficos from './components/style_module/LazyGraficos';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route path="/login/*" element={<Login />} />
           <Route path="/carros/*" element={<Carros />} />
           <Route path="/vendedor/*" element={<Vendedor />} />
-          <Route path="/graficos/*" element={<Graficos />} />
+          <Route path="/graficos/*" element={<LazyGraficos />} />
         </Routes>
       </BrowserRouter>
       <Footer />
