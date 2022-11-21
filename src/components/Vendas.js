@@ -99,6 +99,7 @@ const Vendas = () => {
           </div>
         </div>
         <div className="contain">
+          <h1>Relatório de Vendas</h1>
           <table className={StyleTable.table}>
             <thead>
               <tr>

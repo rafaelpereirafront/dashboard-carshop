@@ -26,7 +26,6 @@ export function DataElementCar(props) {
 }
 
 export function DataElementVenda(props) {
-  console.log();
   return (
     <>
       <td className={StyleTable.table_line}>{props.id}</td>

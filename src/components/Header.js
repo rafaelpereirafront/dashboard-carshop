@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as IconVendas } from '../vendas.svg';
 import { ReactComponent as IconCars } from '../car.svg';
 import { ReactComponent as IconVendor } from '../vendedor.svg';
+import { ReactComponent as IconGrafico } from '../grafico.svg';
 
 const Header = () => {
   return (
@@ -26,6 +27,12 @@ const Header = () => {
             <div className={Style.icon}>
               <IconVendor />
               <span>Vendedor</span>
+            </div>
+          </Link>
+          <Link to="/graficos" aria-label="graficos">
+            <div className={Style.icon}>
+              <IconGrafico />
+              <span>Graficos</span>
             </div>
           </Link>
         </div>

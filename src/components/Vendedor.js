@@ -69,6 +69,7 @@ const Vendedor = () => {
           </div>
         </div>
         <div className="contain">
+          <h1>Cadastro de Vendedores</h1>
           <table className={StyleTable.table}>
             <thead>
               <tr>

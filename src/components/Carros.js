@@ -90,6 +90,7 @@ const Carros = () => {
           </div>
         </div>
         <div className="contain">
+          <h1>Cadastro de Veículos</h1>
           <table className={StyleTable.table}>
             <thead>
               <tr>

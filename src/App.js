@@ -7,6 +7,7 @@ import Vendas from './components/Vendas';
 import Login from './components/login/Login';
 import Carros from './components/Carros';
 import Vendedor from './components/Vendedor';
+import Graficos from './components/Graficos';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login/*" element={<Login />} />
           <Route path="/carros/*" element={<Carros />} />
           <Route path="/vendedor/*" element={<Vendedor />} />
+          <Route path="/graficos/*" element={<Graficos />} />
         </Routes>
       </BrowserRouter>
       <Footer />
