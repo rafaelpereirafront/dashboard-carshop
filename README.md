@@ -1,7 +1,10 @@
 # Desafio Drivops
 
 ## Biblioteca Utilizada
-* Victory - Auxilia na criação de gráficos.
+
+* Express;
+* Cors;
+* Victory.
 
 ## Video Demonstrativo
 
