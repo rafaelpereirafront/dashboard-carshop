@@ -1,10 +1,10 @@
 import React from 'react';
 import Style from './style_module/Header.module.css';
 import { Link } from 'react-router-dom';
-import { ReactComponent as IconVendas } from '../vendas.svg';
-import { ReactComponent as IconCars } from '../car.svg';
-import { ReactComponent as IconVendor } from '../vendedor.svg';
-import { ReactComponent as IconGrafico } from '../grafico.svg';
+import { ReactComponent as IconVendas } from '../assets/vendas.svg';
+import { ReactComponent as IconCars } from '../assets/car.svg';
+import { ReactComponent as IconVendor } from '../assets/vendedor.svg';
+import { ReactComponent as IconGrafico } from '../assets/grafico.svg';
 
 const Header = () => {
   return (

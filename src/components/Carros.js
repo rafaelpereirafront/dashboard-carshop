@@ -3,8 +3,8 @@ import Axios from 'axios';
 import Button from './forms/Button';
 import Input from './forms/Input';
 import Style from './style_module/InputHeader.module.css';
-import StyleTable from './dataElement/DataElement.module.css';
-import { DataElementCar } from './dataElement/DataElement';
+import StyleTable from './dataElement/DataTable.module.css';
+import { DataElementCar } from './dataElement/DataTable';
 
 const Carros = () => {
   const [values, setValues] = useState();

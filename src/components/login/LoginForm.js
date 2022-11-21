@@ -13,8 +13,8 @@ const LoginForm = () => {
   }
 
   return (
-    <section className={Style.loginForm}>
-      <h2 className={Style.title}>Login</h2>
+    <section className={Style.login_form}>
+      <h2 className={Style.login_title}>Login</h2>
       <form action="" className={Style.form}>
         <div className={Style.form}>
           <Input label="Usuário" type="text" name="username" {...username} />

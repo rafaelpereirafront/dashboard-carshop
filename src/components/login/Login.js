@@ -5,7 +5,7 @@ import LoginForm from './LoginForm';
 
 const Login = () => {
   return (
-    <div className={Style.loginSection}>
+    <div className={Style.login_section}>
       <Routes>
         <Route path="/" element={<LoginForm />} />
       </Routes>

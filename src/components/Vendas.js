@@ -3,8 +3,8 @@ import Axios from 'axios';
 import Button from './forms/Button';
 import Input from './forms/Input';
 import Style from './style_module/InputHeader.module.css';
-import StyleTable from './dataElement/DataElement.module.css';
-import { DataElementVenda } from './dataElement/DataElement';
+import StyleTable from './dataElement/DataTable.module.css';
+import { DataElementVenda } from './dataElement/DataTable';
 
 const Vendas = () => {
   const [values, setValues] = useState();

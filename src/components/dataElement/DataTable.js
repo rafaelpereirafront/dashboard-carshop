@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleTable from './DataElement.module.css';
+import StyleTable from './DataTable.module.css';
 
 export function DataElementVendedor(props) {
   return (
