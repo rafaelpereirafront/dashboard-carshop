@@ -82,10 +82,18 @@ const Carros = () => {
                     onChange={HandleChangeValues}
                   />
                 </div>
+                <div>
+                  <Input
+                    label="Imagem"
+                    name="imagem"
+                    type="file"
+                    onChange={HandleChangeValues}
+                  />
+                </div>
+                <Button onClick={() => HandleClickButton()}>
+                  Cadastrar Carro
+                </Button>
               </div>
-              <Button onClick={() => HandleClickButton()}>
-                Cadastrar Carro
-              </Button>
             </form>
           </div>
         </div>
@@ -94,7 +102,7 @@ const Carros = () => {
           <table className={StyleTable.table}>
             <thead>
               <tr>
-                <th className={StyleTable.table_title}>#</th>
+                <th className={StyleTable.table_column_nome}>#</th>
                 <th className={StyleTable.table_title}>Categoria</th>
                 <th className={StyleTable.table_title}>Modelo</th>
                 <th className={StyleTable.table_title}>Ano</th>
@@ -117,6 +125,7 @@ const Carros = () => {
                         ano={value.ano}
                         preco={`R$ ${value.preco}`}
                         condicao={value.condicao}
+                        imagem={value.imagem}
                       />
                     </tr>
                   </tbody>

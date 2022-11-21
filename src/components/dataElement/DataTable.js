@@ -15,7 +15,7 @@ export function DataElementVendedor(props) {
 export function DataElementCar(props) {
   return (
     <>
-      <td className={StyleTable.table_line}>{props.id}</td>
+      <td className={StyleTable.table_column_nome}>{props.id}</td>
       <td className={StyleTable.table_line}>{props.categoria}</td>
       <td className={StyleTable.table_line}>{props.modelo}</td>
       <td className={StyleTable.table_line}>{props.ano}</td>
