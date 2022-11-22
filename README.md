@@ -8,6 +8,7 @@
 
 ## Biblioteca Utilizada
 
+* Axios;
 * Express;
 * Cors;
 * Victory.
